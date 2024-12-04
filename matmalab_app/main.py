@@ -97,8 +97,10 @@ def generate_math_problem():
 @app.post("/matmalab")
 async def add_question(db: Session = Depends(get_db)):
     math_problem = generate_math_problem()
+
     while "question" not in math_problem or "answer" not in math_problem:
         math_problem = generate_math_problem()
+
     math_problem_des = json.loads(math_problem)
     math_problem = MathProblem(
         question=math_problem_des["question"],
@@ -107,7 +109,14 @@ async def add_question(db: Session = Depends(get_db)):
     math_problem = math_problem.to_math_problem_in_db()
     db.add(math_problem)
     db.commit()
-    return math_problem
+    db.refresh(math_problem)
+
+    # Zwrot obiektu w formacie słownika
+    return {
+        "id": math_problem.id,
+        "question": math_problem.question,
+        "answer": math_problem.answer,
+    }
 
 
 @app.get("/matmalab")

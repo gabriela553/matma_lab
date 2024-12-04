@@ -1,0 +1,37 @@
+# Python bytecode files
+*.pyc
+__pycache__/
+
+# Virtual environment folder (standard for virtualenv)
+venv/
+.env/
+
+# IDE or editor folders
+.idea/
+.vscode/
+
+# FastAPI specific
+*.db
+*.sqlite3
+instance/
+
+# Testing
+.pytest_cache/
+.coverage
+*.log
+htmlcov/
+
+# Distribution folders
+dist/
+build/
+*.egg-info/
+
+# Environment variables (add your secrets)
+.env
+
+# Other temporary files
+*.swp
+*.bak
+*.tmp
+
+ollama/
