@@ -17,6 +17,7 @@ instance/
 
 # Testing
 .pytest_cache/
+.ruff_cache/
 .coverage
 *.log
 htmlcov/
@@ -25,7 +26,7 @@ htmlcov/
 dist/
 build/
 *.egg-info/
-
+.idea/
 # Environment variables (add your secrets)
 .env
 
@@ -33,5 +34,3 @@ build/
 *.swp
 *.bak
 *.tmp
-
-ollama/

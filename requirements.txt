@@ -5,6 +5,5 @@ sqlalchemy~=2.0.30
 ruff
 psycopg2
 httpx
-ollama
 requests
 ipdb
