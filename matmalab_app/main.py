@@ -1,13 +1,18 @@
 import json
+import os
 
 import requests
+from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, HTTPException
 from pydantic import BaseModel
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
-from matmalab_app import config
 from matmalab_app.tables.questions import Base, MathProblemInDB
+
+load_dotenv()
+
+CONNECTION_STRING = os.getenv("CONNECTION_STRING")
 
 app = FastAPI()
 
@@ -34,7 +39,7 @@ class MathProblem(BaseModel):
 
 
 async def get_db():
-    engine = create_engine(config.CONNECTION_STRING, echo=True)
+    engine = create_engine(CONNECTION_STRING, echo=True)
     db = Session(engine)
     Base.metadata.create_all(engine)
     try:
