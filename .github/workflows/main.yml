@@ -43,7 +43,7 @@ jobs:
         POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
 
     - name: Execute tests in the running services
-      run: docker-compose exec app pytest
+      run: docker-compose exec -T app pytest
 
     - name: Stop and remove Docker containers
       if: always()
