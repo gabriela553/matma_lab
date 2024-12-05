@@ -4,7 +4,7 @@ __pycache__/
 
 # Virtual environment folder (standard for virtualenv)
 venv/
-.env/
+.env
 
 # IDE or editor folders
 .idea/
