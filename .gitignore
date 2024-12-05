@@ -22,3 +22,4 @@ instance/
 *.log
 htmlcov/
 matmalab_app/.idea/
+matmalab_app/__pycache__/

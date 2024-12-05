@@ -5,4 +5,3 @@ build:
 test:
 	@echo "Running tests..."
 	docker compose -f docker-compose.yml run app pytest -s -vv 
-
