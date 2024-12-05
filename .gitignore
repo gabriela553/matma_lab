@@ -21,4 +21,4 @@ instance/
 .coverage
 *.log
 htmlcov/
-
+matmalab_app/.idea/
