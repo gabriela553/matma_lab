@@ -22,15 +22,3 @@ instance/
 *.log
 htmlcov/
 
-# Distribution folders
-dist/
-build/
-*.egg-info/
-.idea/
-# Environment variables (add your secrets)
-.env
-
-# Other temporary files
-*.swp
-*.bak
-*.tmp

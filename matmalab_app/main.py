@@ -111,7 +111,6 @@ async def add_question(db: Session = Depends(get_db)):
     db.commit()
     db.refresh(math_problem)
 
-    # Zwrot obiektu w formacie słownika
     return {
         "id": math_problem.id,
         "question": math_problem.question,
